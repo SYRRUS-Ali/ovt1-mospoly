@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/feedback.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>Обратная связь</h1>
+            <form action="https://httpbin.org/post" method="POST">
+                <label for="fullname">ФИО:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <fieldset>
+                    <label>Откуда узнали о нас?</label>
+                    <label><input type="radio" name="source" value="advertisement" required> Реклама</label>
+                    <label><input type="radio" name="source" value="friend" required> От друга</label>
+                    <label><input type="radio" name="source" value="internet" required> Интернет</label>
+                </fieldset>
+
+                <label for="appeal-type">Тип обращения:</label>
+                <select id="appeal-type" name="appeal-type">
+                    <option value="complaint">Жалоба</option>
+                    <option value="suggestion">Предложение</option>
+                </select>
+
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <label for="attachment">Вложения:</label>
+                <input type="file" id="attachment" name="attachment">
+
+                <label>
+                    <input type="checkbox" name="agreement" required>
+                    Даю согласие на обработку персональных данных
+                </label>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </main>
+    <footer id="contacts">
+        <p><a href="index.html">Главная страница</a></p>
+        <p>Позвоните нам <a href="tel:+7-000-000-00-00">+7-000-000-00-00</a></p>
+        <p><a href="feedback.html">Обратная связь</a></p>
+        <p><a href="auth.html">Авторизация</a></p>
+    </footer>
+</body>
+
+</html>
