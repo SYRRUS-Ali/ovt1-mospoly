@@ -1,0 +1,26 @@
+.versions {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+.versions a {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #b4b4b4;
+    margin: 2rem;
+    padding: 1rem;
+    border: solid 0.1rem black;
+    border-radius: 3rem;
+    transition: 0.5s ease;
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.475));
+
+}
+
+.versions a:hover {
+    background-color: #97a0a5;
+    filter: drop-shadow(0 0 1.2rem rgba(5, 47, 77, 0.79));
+    color: rgb(0, 179, 255);
+    transition: 0.5s ease;
+}
