@@ -89,7 +89,7 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 5px rgba(42, 104, 140, 0.5);
 }
 
-label {
+.order label {
     font-size: 1.1rem;
     font-weight: 500;
     color: #333;
@@ -97,29 +97,29 @@ label {
     margin-bottom: 8px;
 }
 
-textarea {
+.order textarea {
     resize: vertical;
     height: 120px;
     width: 100%;
 }
 
-button {
+.order button {
     width: 45%;
     padding: 12px 24px;
     margin: 10px 2%;
 }
 
-button[type="submit"] {
+.order button[type="submit"] {
     background-color: #5e9ac0;
 
 }
 
-button[type="reset"] {
+.order button[type="reset"] {
     background-color: #c05e5e;
     color: #000;
 }
 
-button[type="reset"]:hover {
+.order button[type="reset"]:hover {
     background-color: #c51111;
 }
 
@@ -154,4 +154,19 @@ button[type="reset"]:hover {
     #order-form {
         grid-template-columns: repeat(1, 1fr);
     }
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
+
+@media (max-width: 600px) {
+    .menu-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .dish {
+        padding: 20px 30px;
+    }
+}
+ 
