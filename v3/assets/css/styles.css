@@ -120,10 +120,6 @@ footer a:hover {
 }
 
 @media (max-width: 800px) {
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     header nav a {
         display: block;
         margin: 5px 0;
@@ -133,14 +129,6 @@ footer a:hover {
 @media (max-width: 600px) {
     header h1 {
         font-size: 2rem;
-    }
-
-    .menu-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .dish {
-        padding: 20px 30px;
     }
 
     button {
