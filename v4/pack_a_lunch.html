@@ -173,29 +173,30 @@
             <form action="https://httpbin.org/post" method="POST" id="order-form">
                 <div id="order-block">
                     <h3>Ваш заказ</h3>
-                    <div id="order-summary">
+                    <div id="nothing-selected">Ничего не выбрано</div>
+                    <div id="order-summary" style="display: none;">
                         <div id="order-soup">
-                            <b>Суп:</b> 
-                            <span id="soup-name">Блюдо не выбрано</span> 
+                            <div id="soup-title" class="meal-category">Суп:</div> 
+                            <div id="soup-name">Блюдо не выбрано</div> 
                             <span id="soup-price" style="display: none;">(0₽)</span>
                         </div>
                         <div id="order-main">
-                            <b>Основное блюдо:</b> 
+                            <div id="main-title" class="meal-category">Основное блюдо:</div>
                             <span id="main-name">Блюдо не выбрано</span> 
                             <span id="main-price" style="display: none;">(0₽)</span>
                         </div>
                         <div id="order-pizza">
-                            <b>Пицца:</b> 
+                            <div id="pizza-title" class="meal-category">Пицца:</div> 
                             <span id="pizza-name">Блюдо не выбрано</span> 
                             <span id="pizza-price" style="display: none;">(0₽)</span>
                         </div>
                         <div id="order-salad">
-                            <b>Салат:</b> 
+                            <div id="salad-title" class="meal-category">Салат:</div> 
                             <span id="salad-name">Блюдо не выбрано</span> 
                             <span id="salad-price" style="display: none;">(0₽)</span>
                         </div>
                         <div id="order-drink">
-                            <b>Напиток:</b> 
+                            <div id="drink-title" class="meal-category">Напиток:</div> 
                             <span id="drink-name">Блюдо не выбрано</span> 
                             <span id="drink-price" style="display: none;">(0₽)</span>
                         </div>
@@ -204,6 +205,7 @@
                         </div>
                     </div>
                 </div>
+                
 
                 <input type="hidden" name="soup" id="hidden-soup" value="Блюдо не выбрано">
                 <input type="hidden" name="mainDish" id="hidden-main" value="Блюдо не выбрано">
