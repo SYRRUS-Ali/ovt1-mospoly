@@ -173,6 +173,9 @@ textarea:focus {
     margin-left: 2rem;
 }
 
+.meal-category {
+    font-weight: bold;
+}
 
 @media (max-width: 800px) {
     .menu-grid {
