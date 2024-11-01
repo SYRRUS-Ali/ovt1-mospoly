@@ -96,13 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
         filteredMeals.forEach((meal) => {
             const mealElement = document.createElement("div");
             mealElement.classList.add("dish");
-            mealElement.setAttribute("data-kind", meal.kind); // Assuming `meal.kind` corresponds to the type (e.g., "meat")
+            mealElement.setAttribute("data-kind", meal.kind);
             
             mealElement.innerHTML = `
                 <img src="${meal.image}" alt="${meal.name}">
                 <p class="price">${meal.price}₽</p>
                 <p class="name">${meal.name}</p>
-                <p class="weight">${meal.weight} г</p>
+                <p class="weight">${meal.count}</p>
                 <button data-name="${meal.name}" data-price="${meal.price}">Добавить</button>
             `;
         
@@ -127,28 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-const deliveryAsap = document.getElementById("asap");
-const deliverySpecific = document.getElementById("specific_time");
-const deliveryTimeInput = document.getElementById("time");
-const timeLabel = document.querySelector("label[for='time']");
-const deliveryTimeHint = document.querySelector("#time + p");
-
-deliveryTimeInput.style.display = "none";
-timeLabel.style.display = "none";
-deliveryTimeHint.style.display = "none";
-
-function handleDeliveryTimeToggle() {
-    if (deliveryAsap.checked) {
-        deliveryTimeInput.style.display = "none";
-        timeLabel.style.display = "none";
-        deliveryTimeHint.style.display = "none";
-        deliveryTimeInput.value = "";
-    } else if (deliverySpecific.checked) {
-        deliveryTimeInput.style.display = "block";
-        timeLabel.style.display = "block";
-        deliveryTimeHint.style.display = "block";
-    }
-}
-
-deliveryAsap.addEventListener("change", handleDeliveryTimeToggle);
-deliverySpecific.addEventListener("change", handleDeliveryTimeToggle);
+document.querySelector('button[type="reset"]').addEventListener('click', () => {
+    order = { soup: null, main: null, drink: null, salad: null, dessert: null };
+    updateOrderDisplay();
+  });
+  
