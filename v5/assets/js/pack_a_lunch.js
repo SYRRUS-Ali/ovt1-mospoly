@@ -1,5 +1,5 @@
 let order = {
-    soup: null,
+    soups: null,
     main_dishes: null,
     salads: null,
     drinks: null,
@@ -19,48 +19,50 @@ function updateOrderDisplay() {
     let isOrderEmpty = true;
 
     for (const [category, meal] of Object.entries(order)) {
+        const categoryTitle = document.createElement("b");
+        categoryTitle.textContent = getCategoryTitle(category);
+        orderSummary.appendChild(categoryTitle);
+
+        const meals = document.createElement("p");
+
         if (meal) {
-            const categoryTitle = document.createElement("b");
-            categoryTitle.textContent = getCategoryTitle(category);
-            orderSummary.appendChild(categoryTitle);
-
-            const mealInfo = document.createElement("p");
-            mealInfo.textContent = `${meal.name} - ${meal.price}₽`;
-            orderSummary.appendChild(mealInfo);
-            mealInfo.style.display = "block";
-            mealInfo.style.margin = "0 1.5rem";
-            mealInfo.style.alignItems = "center";
-
+            meals.textContent = `${meal.name} - ${meal.price}₽`;
             totalCost += meal.price;
             isOrderEmpty = false;
+        } else {
+            meals.textContent = "Ничего не выбрано";
         }
+
+        meals.style.display = "block";
+        meals.style.margin = "0 1.5rem";
+        meals.style.alignItems = "center";
+        orderSummary.appendChild(meals);
     }
 
-    if (isOrderEmpty) {
-        orderSummary.innerHTML = "<p>Ничего не выбрано</p>";
-    } else {
+    if (!isOrderEmpty) {
         const totalContainer = document.createElement("div");
         totalContainer.style.display = "block";
         totalContainer.style.margin = "1rem 0";
         totalContainer.style.alignItems = "center";
-    
+
         const totalElement = document.createElement("b");
         totalElement.textContent = "Стоимость заказа:";
-        totalElement.style.fontSize = "1.2rem" ;
-    
+        totalElement.style.fontSize = "1.2rem";
+
         const totalCostElement = document.createElement("span");
         totalCostElement.textContent = `${totalCost}₽`;
-        
-    
+
         totalContainer.appendChild(totalElement);
         totalContainer.appendChild(totalCostElement);
         orderSummary.appendChild(totalContainer);
+    } else {
+        orderSummary.innerHTML = "<p>Ничего не выбрано</p>";
     }
 }
 
 function getCategoryTitle(category) {
     switch (category) {
-        case "soup":
+        case "soups":
             return "Суп";
         case "main_dishes":
             return "Главное блюдо";
@@ -105,11 +107,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p class="weight">${meal.count}</p>
                 <button data-name="${meal.name}" data-price="${meal.price}">Добавить</button>
             `;
-        
+
             mealElement.querySelector("button").addEventListener("click", () => addToOrder(meal));
             categories[category].appendChild(mealElement);
         });
-        
     }
 
     Object.keys(categories).forEach((category) => displayMeals(category));
@@ -127,8 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.querySelector('button[type="reset"]').addEventListener('click', () => {
-    order = { soup: null, main: null, drink: null, salad: null, dessert: null };
+document.querySelector('button[type="reset"]').addEventListener("click", () => {
+    order = {
+        soups: null,
+        main_dishes: null,
+        salads: null,
+        drinks: null,
+        desserts: null,
+    };
     updateOrderDisplay();
-  });
-  
+});
