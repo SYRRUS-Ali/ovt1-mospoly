@@ -60,7 +60,7 @@ const menuItems = [
         keyword: 'fried_potatoes',
         name: 'Жареная картошка с грибами',
         price: 150,
-        category: 'main-dishes',
+        category: 'main_dishes',
         count: '400 г',
         image: 'assets/images/menu/fried_potatoes_with_mushrooms.jpg',
         kind: 'veg'
@@ -69,7 +69,7 @@ const menuItems = [
         keyword: 'lasagna',
         name: 'Лазанья',
         price: 300,
-        category: 'main-dishes',
+        category: 'main_dishes',
         count: '320 г',
         image: 'assets/images/menu/lasagna.jpg',
         kind: 'meat'
@@ -78,7 +78,7 @@ const menuItems = [
         keyword: 'chicken_cutlets',
         name: 'Котлеты из курицы с картофельным',
         price: 350,
-        category: 'main-dishes',
+        category: 'main_dishes',
         count: '350 г',
         image: 'assets/images/menu/chicken_cutlets_and_mashed_potatoes.jpg',
         kind: 'meat'
@@ -87,7 +87,7 @@ const menuItems = [
         keyword: 'fish_cutlet',
         name: 'Рыбные котлеты',
         price: 400,
-        category: 'main-dishes',
+        category: 'main_dishes',
         count: '350 г',
         image: 'assets/images/menu/fish_cutlet.jpg',
         kind: 'fish'
@@ -96,7 +96,7 @@ const menuItems = [
         keyword: 'grilled_fish',
         name: 'Жареная рыба',
         price: 600,
-        category: 'main-dishes',
+        category: 'main_dishes',
         count: '350 г',
         image: 'assets/images/menu/grilled_fish.jpg',
         kind: 'fish'
@@ -105,7 +105,7 @@ const menuItems = [
         keyword: 'grilled_shrimp',
         name: 'Креветки на гриле',
         price: 650,
-        category: 'main-dishes',
+        category: 'main_dishes',
         count: '200 г',
         image: 'assets/images/menu/grilled_shrimp.jpg',
         kind: 'fish'
@@ -114,7 +114,7 @@ const menuItems = [
         keyword: 'vegetable_stirfry',
         name: 'Овощное рагу',
         price: 220,
-        category: 'main-dishes',
+        category: 'main_dishes',
         count: '350 г',
         image: 'assets/images/menu/vegetable_stirfry.jpg',
         kind: 'veg'
@@ -357,7 +357,7 @@ function renderMenuItems(section, items) {
 
 const sections = {
     soups: document.getElementById('soups'),
-    mainDishes: document.getElementById('main-dishes'),
+    main_dishes: document.getElementById('main_dishes'),
     salads: document.getElementById('salads'),
     drinks: document.getElementById('drinks'),
     desserts: document.getElementById('desserts')
