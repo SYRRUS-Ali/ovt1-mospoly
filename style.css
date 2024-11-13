@@ -33,8 +33,8 @@ p {
 
 .versions {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -57,4 +57,16 @@ p {
     transform: translateY(-7px);
     color: rgb(0, 213, 255);
     filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3));
+}
+
+@media screen and (max-width: 800px) {
+	.versions {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.versions {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
